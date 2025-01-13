@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f3f4f6, #ffe0f0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #FF69B4;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(90deg);
+            margin: 20px;
+            animation: heartbeat 1s infinite alternate;
+        }
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            100% {
+                transform: rotate(0deg) scale(1.2);
+            }
+        }
+        .message {
+            font-size: 1.5rem;
+            color: #555;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        .photos {
+            display: none; /* Initially hidden */
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .photos img {
+            width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photos img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #FF69B4;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #ff85c1;
+            transform: scale(1.05);
+        }
+        .hidden-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #FF69B4;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heart Animation -->
+    <div class="heart"></div>
+
+    <!-- Heading -->
+    <h1>For you, [UROOBA] 💖</h1>
+
+    <!-- Main Message -->
+    <p class="message">
+        I wanted to take a moment to share something special with you. <br>
+        Each photo here holds a memory, and every memory is a treasure. <br>
+        You're not just in my life; you're the reason it feels so complete. 💕
+    </p>
+    <p class="sub-message">
+        I don't know how to ask why you're upset or how to make your mood better.
+        I've been trying and learning this because its kinda cute and also to impress you,
+        because I know you soemtime you like efforts. It's not that you complain exactly,
+        but sometimes it feels like I fall short of your expectations.
+        SORRY FOR THAT.
+    </p>
+
+    <!-- Button -->
+    <button class="btn" onclick="showPhotos()">Click to See Photos</button>
+
+    <!-- Photos Section -->
+    <div class="photos" id="photoGallery">
+        <img src="photo1.jpg.JPG" alt="Memory 1">
+        <img src="photo2.jpg.JPG" alt="Memory 2">
+        <img src="photo3.jpg.JPG" alt="Memory 3">
+    </div>
+
+    <script>
+        // Function to show the photos
+        function showPhotos() {
+            const gallery = document.getElementById('photoGallery');
+            gallery.style.display = 'flex'; // Display photos when button is clicked
+        }
+    </script>
+</body>
+</html>
